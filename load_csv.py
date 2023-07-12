@@ -35,6 +35,9 @@ if __name__ == '__main__':
     fig, axes = plt.subplots(2,1, figsize=(10, 8))
 
     sns.lineplot(data= df, ax =axes[0])
+    axes[0].tick_params(bottom=False)
+    axes[0].set(xticklabels=[])
+    axes[0].set(xlabel=None)
     sns.lineplot(data= df, x="Date", y="inf_day", ax =axes[1])
     plt.show()
 
