@@ -39,6 +39,12 @@ for i in range(k_reg):
 plt.show()
 
 #%%
+plt.plot(res.fittedvalues, label='fitted')
+plt.plot(df1['Inf_day'], label='original')
+plt.show()
+
+
+#%%
 print(res1.summary())
 
 for i in range(k_reg):
@@ -68,7 +74,13 @@ for i in range(k_reg):
     plt.show()    
     
 for i in range(k_reg):
-    res.smoothed_marginal_probabilities[i].plot(title=f"{k_reg}")
+    res.smoothed_marginal_probabilities[i].plot(title=f"{i}")
 plt.show()
+
+plt.plot(res.fittedvalues, label='fitted')
+plt.plot(df1['Inf_day'], label='original')
+plt.show()
+
+
 
 # %%
