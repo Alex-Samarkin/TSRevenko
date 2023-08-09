@@ -5,28 +5,26 @@ import seaborn as sns
 
 file = "COVID_PSK.csv"
 
-df = pd.read_csv(file,sep=';',encoding='utf-8',index_col='Date')
+#df = pd.read_csv(file,sep=';',encoding='utf-8',index_col='Date')
 
-df["inf_day"] = df["Infections"].diff(periods=1)
+#df["inf_day"] = df["Infections"].diff(periods=1)
 
-print(df.head())
+#print(df.head())
 
-print(df.columns.tolist())
+#print(df.columns.tolist())
 
 #%%
 # Assuming your DataFrame is called 'df'
-df['Date'] = df.index
+#df['Date'] = df.index
 
 
 #%%
 # Convert Date column to numerical format
-df['Date'] = pd.to_datetime(df['Date'],format='%d.%m.%Y',dayfirst=True)
-print(df['Date'])
+#df['Date'] = pd.to_datetime(df['Date'],format='%d.%m.%Y',dayfirst=True)
 
 #%%
 # Convert Date column to numerical format and convert from nanoseconds to days
-df['Date'] = pd.to_numeric(df['Date']-df['Date'].min()) / (24*60*60*1000000000)
-print(df['Date'])
+#df['Date'] = pd.to_numeric(df['Date']-df['Date'].min()) / (24*60*60*1000000000)
 
 def QuickLoad(file = "COVID_PSK.csv"):
     df = pd.read_csv(file,sep=';',encoding='utf-8',index_col='Date')
@@ -46,6 +44,7 @@ def QuickLoad(file = "COVID_PSK.csv"):
 
 #%%
 if __name__ == '__main__':
+    QuickLoad(file = "COVID_PSK.csv")
     #plot the data using seaborn versus Date
     fig, axes = plt.subplots(2,1, figsize=(10, 8))
 
